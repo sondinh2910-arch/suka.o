@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+body{margin:0;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;background:#ccc}
+.c{width:350px;height:500px;background:#fff;display:flex;flex-direction:column;border-radius:10px}
+.h{text-align:center;padding:10px;font-weight:bold}
+.b{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:5px}
+.m{padding:6px 10px;border-radius:12px;max-width:75%}
+.u{background:#08f;color:#fff;align-self:flex-end}
+.o{background:#eee}
+form{display:flex;padding:5px;gap:5px}
+input{flex:1;padding:6px;border-radius:12px;border:1px solid #ccc}
+button{padding:6px 12px;border:0;border-radius:12px;background:#08f;color:#fff}
+</style>
+</head>
+<body>
+
+<div class="c">
+    <div class="h">chat</div>
+    <div class="b" id="b"><div class="m o">chào</div></div>
+    <form id="f">
+        <input id="t" required>
+        <button>Gửi</button>
+    </form>
+</div>
+
+<script>
+f.onsubmit=async e=>{
+    e.preventDefault();
+    add(t.value,"u");
+    let w=add("...", "o");
+    let fd=new FormData(); fd.append("msg",t.value); t.value="";
+    try{
+        let r=await fetch("/ask",{method:"POST",body:fd});
+        let d=await r.json();
+        w.remove(); add(d.answer,"o");
+    }catch{ w.remove(); add("Lỗi!", "o"); }
+};
+function add(x,y){
+    let d=document.createElement("div");
+    d.className="m "+y; d.textContent=x;
+    b.appendChild(d); b.scrollTop=b.scrollHeight;
+    return d;
+}
+</script>
+
+</body>
+</html>
