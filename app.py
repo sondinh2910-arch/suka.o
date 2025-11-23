@@ -7,7 +7,7 @@ import sys
 
 app = Flask(__name__)
 API_KEY = "AIzaSyBTWM7coEN0foD3BanEF2mC8PyPr-CYWbA"
-genai.configure(api_key=AIzaSyBTWM7coEN0foD3BanEF2mC8PyPr-CYWbA)
+genai.configure(api_key=API_KEY)
 
 
 chat_session = None
