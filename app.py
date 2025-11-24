@@ -6,9 +6,7 @@ import webbrowser
 import sys
 
 app = Flask(__name__)
-API_KEY = "AIzaSyCXUD1BczC_4sNqTgvdzi1YsGSm8-LtWWU"
-genai.configure(api_key=API_KEY)
-
+genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 
 chat_session = None
 
