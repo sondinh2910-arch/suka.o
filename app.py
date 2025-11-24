@@ -6,7 +6,7 @@ import webbrowser
 import sys
 
 app = Flask(__name__)
-API_KEY = "AIzaSyCpaIu4QKqC71EyfygrdCtPnLZ_qIVYtC0"
+API_KEY = "AIzaSyCXUD1BczC_4sNqTgvdzi1YsGSm8-LtWWU"
 genai.configure(api_key=API_KEY)
 
 
