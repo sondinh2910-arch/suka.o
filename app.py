@@ -13,7 +13,7 @@ genai.configure(api_key=API_KEY)
 chat_session = None
 
 try:
-    model = genai.GenerativeModel("gemini-1.5-pro") 
+    model = genai.GenerativeModel("gemini-2.5") 
     chat_session = model.start_chat(history=[])
     print("ok.")
 except Exception as e:
